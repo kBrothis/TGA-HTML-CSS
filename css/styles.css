@@ -50,6 +50,9 @@ button{
 	height:80%;
 	padding:2.5px 10px 2.5px 10px;
 }
+#navbar a{
+		text-decoration: none;
+}
 #slideshow{
     display:inline-block;
 	width:100%;
