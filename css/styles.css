@@ -22,6 +22,7 @@ body{
 	float:right;
 	padding-right:8px;
 	margin-bottom:10px;
+	clear: both;
 }
 #topCorners a{
 	text-decoration:none;
@@ -50,12 +51,6 @@ button{
 	padding:2.5px 10px 2.5px 10px;
 }
 
-
-
-
-
-
-
 #slideshow{
     display:inline-block;
 	width:100%;
@@ -65,10 +60,10 @@ button{
   display:inline-block;
   background-color:	#C8C8C8 ;
   float:left;
-  width:60%;
+  width:59.5%;
   height:300px;
   text-align:center;
-  margin-right:30px;
+  margin-right:27px;
 }
 #slidertext{
   display:inline-block;
@@ -81,7 +76,6 @@ button{
   font-size:20px;
 }
 
-
 hr{
 	margin:0;
 	padding:0;
@@ -91,9 +85,9 @@ hr{
 	float:left;
 	display:inline-block;
 	border-right:1px solid lightgrey;
-	width:27%;
+	width:28%;
 	padding-left:20px;
-	height:500px;
+	height:510px;
 }
 #block1 img{
 	border:1px solid grey;
@@ -111,14 +105,53 @@ hr{
 	float:left;
 	padding:0 20px;
 	width:27%;
-	height:500px;
+	height:510px;
 	border-right:1px solid lightgrey;
 }
 #block2 img{
 	float:left;
 	height:70px;
 	width:18%;
+	padding-right: 7px;
 }
 #block2 p:nth-child(2){
 	float:left;
+}
+.rightAnchors{
+	float:right;
+}
+
+#block3{
+	float:left;
+	width:27%;
+	height:510px;
+	padding:0 20px;
+}
+
+.form2{
+	display: block;
+	margin-bottom: 5px;
+}
+.form2[type~="submit"]{
+	border-radius: 30px;
+	border:1px solid black;
+	background-color: white;
+}
+[elem|=bttmhr]{
+	clear:both;
+	margin:0;
+	padding:0;
+	border:0.5px solid lightgrey;
+}
+
+#footer{
+	padding: 0 20px;
+}
+#footer p{
+	float:left;
+	padding-right:13px;
+}
+#footer div{
+	clear:both;
+	width:50%;
 }
