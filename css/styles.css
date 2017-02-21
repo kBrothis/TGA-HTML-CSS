@@ -50,7 +50,6 @@ button{
 	height:80%;
 	padding:2.5px 10px 2.5px 10px;
 }
-
 #slideshow{
     display:inline-block;
 	width:100%;
@@ -75,7 +74,6 @@ button{
   font-weight:bold;
   font-size:20px;
 }
-
 hr{
 	margin:0;
 	padding:0;
@@ -100,7 +98,6 @@ hr{
 #block1 a{
 	float:right;
 }
-
 #block2{
 	float:left;
 	padding:0 20px;
@@ -120,14 +117,12 @@ hr{
 .rightAnchors{
 	float:right;
 }
-
 #block3{
 	float:left;
 	width:27%;
 	height:510px;
 	padding:0 20px;
 }
-
 .form2{
 	display: block;
 	margin-bottom: 5px;
@@ -143,7 +138,6 @@ hr{
 	padding:0;
 	border:0.5px solid lightgrey;
 }
-
 #footer{
 	padding: 0 20px;
 }
