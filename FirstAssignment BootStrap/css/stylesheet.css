@@ -3,6 +3,16 @@
     src="BlaxSlabXXL.ttf"
 }
 
+.affix {
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.affix + .container-fluid {
+    padding-top: 70px;
+}
+
 .wrap {
     min-height: 100%;
     height: auto;
