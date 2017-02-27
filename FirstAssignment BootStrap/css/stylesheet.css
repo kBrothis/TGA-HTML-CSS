@@ -3,16 +3,6 @@
     src="BlaxSlabXXL.ttf"
 }
 
-.affix {
-    top: 0;
-    width: 100%;
-    z-index: 9999;
-}
-
-.affix + .container-fluid {
-    padding-top: 70px;
-}
-
 .wrap {
     min-height: 100%;
     height: auto;
@@ -140,7 +130,7 @@ header li a {
 }
 
 .sign-in {
-    background-image: url(images/ice.png);
+    background-image: url(images/iceSmall.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -148,12 +138,14 @@ header li a {
     min-height: 100vh;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
     .sign-in {
-        background-image: url(images/);
+        background-image: url(images/ice.png);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
+        padding: 20px;
+        min-height: 100vh;
     }
 }
 
