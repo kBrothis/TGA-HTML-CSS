@@ -1,7 +1,16 @@
 .blogtext{
-  margin-left: 5px;
+  margin: 0;
 
 }
-.blog1{
+
+.img-responsive{
   float: left;
+  height: 50px;
+  width: 50px;
+  margin-right: 3px;
+}
+
+.blogspace{
+  height: 50px;
+  width: auto;
 }
