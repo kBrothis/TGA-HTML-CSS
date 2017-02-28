@@ -1,6 +1,6 @@
 
 p {
-  font-size: .85em;
+  font-size: .9em;
 }
 
 .background-gray {
@@ -8,32 +8,25 @@ p {
 }
 
 /* HEADER */
-.logo-container {
-  background-color: #CCCCCC;
-  font-weight: bold;
-  color: #9E9E9E;
-}
 .logo {
-  font-size: 28px;
-}
-.company-subtitle {
-  font-size: 17px;
+  font-size: 4em;
+  font-family: 'Monoton', cursive;
+  letter-spacing: -1px;
 }
 
 /* NAVIGATION */
 nav {
-  height: 35px;
   background-color: white;
 }
 nav li {
   line-height: 1.75em;
-  font-size: .85em;
-  border-right: 1px solid #F2F2F2;
+  font-size: .9em;
+  border-right: 1px solid rgba(0, 0, 0, 0.14902);
 }
 
 /* HERO */
-.section {
-  border-bottom: 1px solid #CCCCCC;
+.section-1, .section-2 {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.14902);
 }
 .hero img {
   height: 350px;
@@ -43,13 +36,13 @@ nav li {
 
 /* ARTICLES SECTION */
 .article-wrapper {
-  border-right: 1px solid #CCCCCC;
+  border-right: 1px solid rgba(0, 0, 0, 0.14902);
 }
 .newsletter-heading {
-  font-size: .85em;
+  font-size: .9em;
 }
 .date {
-  font-size: .85em;
+  font-size: .9em;
 }
 .p-margin-top{
   margin-top: -5px;
@@ -63,7 +56,7 @@ nav li {
   width: 70px;
 }
 .article-top {
-  border-bottom: 1px solid #CCCCCC;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.14902);
 }
 .read-more {
   float: right;
@@ -73,8 +66,7 @@ footer {
   font-size: .75em;
 }
 
-
-/* CUSTOM CSS FOR FORM-SIGNIN*/
+/* FORM SIGN-UP */
 .form-signin {
   max-width: 330px;
   margin: 0 auto;
@@ -106,4 +98,20 @@ footer {
   margin-top: -1px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+@media (max-width: 991px) {
+  nav li {
+    border-right: 0;
+  }
+}
+@media (max-width: 575px) {
+  .article-wrapper {
+    border-right: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.14902);
+    padding-bottom: 10px;
+  }
+  .section-2 {
+    border-bottom: 0;
+  }
 }
