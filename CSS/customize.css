@@ -22,6 +22,12 @@ body {
   margin: 0 auto;
 }
 
+.panel-body {
+  height: 400px;
+  text-overflow: ellipsis;
+  background-color: #000000;
+  color: #ffffff;
+}
 .panel-footer {
   background-color: #2b2b2b;
   color: #e2e2e2;
