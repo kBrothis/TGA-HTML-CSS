@@ -1,7 +1,9 @@
 
-
 body {
-  background-color: #000000;
+  background-image: url("C:/Users/Travie/Documents/GitHub/images/quantum-physics-string-theory.jpg");
+
+  background-size: cover;
+  padding-top: 65px;
 }
 
 .navbar-brand {
@@ -15,20 +17,33 @@ body {
 
 .jumbotron {
   background-color: #2b2b2b;
+
 }
-.carousel-inner > .item > img {
-  width:640px;
-  height:360px;
-  margin: 0 auto;
+
+.carousel-inner .item img,
+  .carousel-inner .item a img {
+      width: 70%;
+      margin: auto;
+  }
+
+.panel-header{
+  background-color: #2b2b2b;
+}
+
+#tour {
+  height: 100%;
+  width: 100%;
 }
 
 .panel-body {
-  height: 400px;
+  padding: 30px;
+  height: 440px;
   text-overflow: ellipsis;
+  overflow: hidden;
   background-color: #000000;
   color: #ffffff;
+
 }
-.panel-footer {
-  background-color: #2b2b2b;
-  color: #e2e2e2;
+.footer {
+  color: #ffffff;
 }
