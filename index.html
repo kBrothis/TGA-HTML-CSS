@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,54 +5,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Bootstrap 101 Template</title>
+  <title>Home</title>
 
   <!-- Bootstrap -->
   <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
 
+  <script src="bootstrap-3.3.7-dist/js/w3data.js"></script>
 </head>
 
 <body>
+  <div w3-include-html="header.html"></div>
 
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand narbar-left" href="javascript:void(0)">
-          <img class="img-repsonzive" height="50" alt="Brand" src="images/webLogo.png"> </a>
-        <div class="navbar-right">
-          <div class="header-links">
-            <a href="javascript:void(0)" class="nav-link">Contact Us</a>&nbsp; &nbsp;
-
-            <a href="javascript:void(0)" class="nav-link">Log In</a>
-
-          </div>
-
-          <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Search</button>
-          </form>
-        </div>
-      </div>
-  </nav>
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <ul class="nav nav-pills">
-        <li role="presentation" class="active"><a href="#">Home</a></li>
-        <li><a href=javascript:void(0)>About Us</a></li>
-        <li><a href=javascript:void(0)>Our Approach</a></li>
-        <li><a href=javascript:void(0)>Our Work</a></li>
-        <li><a href=javascript:void(0)>clients</a></li>
-        <li><a href=javascript:void(0)>Resources</a></li>
-      </ul>
-    </div>
-  </div>
+ 
 
   <div class="row slideshow-container">
     <div class="col-sm-6">
-      <div id="myCarousel" class="carousel slides-container" data-ride="carousel">
+      <div id="myCarousel" class="carousel slides-container" data-ride="carousel" data-interval="1000">
         <!-- Indicators -->
         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -95,7 +63,7 @@
   <div class="row three-columns-container">
     <div class="col-sm-4 newsletter-container">
       <h1>Newsletter Title</h1>
-      <a href="=" javaascript:void(0)><img class="newsLetter-Img" src="images/newsletter.jpg"></a>
+      <a href="javaascript:void(0)"><img class="newsLetter-Img" src="images/newsletter.jpg"></a>
       <p>Lorem ipsum dolor sit amet, consetetuer adipiscing elit., sed diam noummy nibh euismod tincident ut loareet dolere
         magna aliquam erat... <a href="javascript:void(0)">Read More</a></p>
     </div>
@@ -103,13 +71,13 @@
       <h1>Blog Post Title</h1>
       <p>Januar 1, 2011 by <a href="javascript:void(0)">Huy</a></p>
       <p>
-        <a href="=" javaascript:void(0)><img class="blog-Img" src="images/newsletter.jpg" align="left"></a>Lorem ipsum dolor sit amet, consetetuer adipiscing
+        <a href="javaascript:void(0)"><img class="blog-Img" src="images/newsletter.jpg" align="left"></a>Lorem ipsum dolor sit amet, consetetuer adipiscing
         elit., sed diam noummy nibh euismod tincident ut loareet dolere magna aliquam erat... <a href="javascript:void(0)">Read More</a></p>
-        <hr/>
+      <hr/>
       <h1>Blog Post Title</h1>
       <p>Januar 1, 2011 by <a href="javascript:void(0)">Huy</a></p>
       <p>
-        <a href="=" javaascript:void(0)><img class="blog-Img" src="images/newsletter.jpg" align="left"></a>Lorem ipsum dolor sit amet, consetetuer adipiscing
+        <a href="javaascript:void(0)"><img class="blog-Img" src="images/newsletter.jpg" align="left"></a>Lorem ipsum dolor sit amet, consetetuer adipiscing
         elit., sed diam noummy nibh euismod tincident ut loareet dolere magna aliquam erat... <a href="javascript:void(0)">Read More</a></p>
     </div>
     <div class="col-sm-4 sign-up-container">
@@ -121,10 +89,12 @@
     </div>
   </div>
 
-  <footer>
-    <p>@2011 Your Company | New York, NY | 800-123-4567</p>
-    <p>Lorem ipsum dolor sit amet, consectetuer.</p>
-  </footer>
+  <div w3-include-html="footer.html"></div>
+
+  <script>
+    w3IncludeHTML();
+  </script>
+
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->

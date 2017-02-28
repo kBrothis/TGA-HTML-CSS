@@ -3,12 +3,17 @@ body{
     padding: 10px;
 }
 
+hr{
+    border-color: black;
+}
+
 .navbar-default{
     background-color: gray;
 }
 
 .navbar-header{
     width: 100%;
+    padding: 10px;
 }
 
 .nav-link{
@@ -19,6 +24,12 @@ body{
 .slideshow-container{
     margin-bottom: 10px;
 }
+
+.carousel-inner > .item > img {
+  width:640px;
+  height:360px;
+}
+
 .header-links{
     margin-top: 20px;
     text-align: right;
@@ -54,6 +65,5 @@ body{
     height: 50px;
 }
 
-hr{
-    border-color: black;
-}
+
+
