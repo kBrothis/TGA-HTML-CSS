@@ -1,29 +1,16 @@
-function readMoreClick() {
-    ///Fired when clicked
-    alert('Test')
-}
+this.readContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dapibus justo nec auctor ultricies. Integer turpis mauris, sollicitudin eu rutrum non, mollis vel purus. Ut sed risus sit amet tellus maximus ultrices a in sem. Morbi ac ipsum egestas, efficitur risus eu, mattis nunc. Aenean porta bibendum magna tincidunt vestibulum. Mauris sed metus fringilla, porta odio vitae, imperdiet diam. Morbi quis mi at risus maximus tempus. Proin ut ornare est.";
 
-(function initOnPageLoad() {
-    var articleBlogs = [];
-    articleBlogs[0] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis ornare metus. " +
-        "Donec posuere massa eget urna gravida hendrerit. Mauris et est nulla. Nunc placerat mattis velit " +
-        "a sodales. Suspendisse suscipit in massa non ullamcorper. Nam hendrerit ex ac bibendum posuere. " +
-        "Nam id iaculis nulla, ac luctus velit. Orci varius natoque penatibus et magnis dis parturient montes, " +
-        "nascetur ridiculus mus. Mauris hendrerit ex sed condimentum ullamcorper. Interdum et malesuada fames " +
-        "ac ante ipsum primis in faucibus. Aliquam viverra maximus massa, nec fermentum sapien sollicitudin vel. " +
-        "Cras viverra diam eu odio accumsan, vel porttitor mauris rutrum. Aenean pulvinar in risus consectetur " +
-        "auctor.  Mauris lacinia justo pharetra, accumsan quam eget, varius velit. Curabitur vel elementum elit. " +
-        "Duis volutpat.";
-    articleBlogs[1] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis ornare metus. " +
-        "Donec posuere massa eget urna gravida hendrerit. Mauris et est nulla. Nunc placerat mattis velit " +
-        "a sodales. Suspendisse suscipit in massa non ullamcorper. Nam hendrerit ex ac bibendum posuere. " +
-        "Nam id iaculis nulla, ac luctus velit. Orci varius natoque penatibus et magnis dis parturient montes, " +
-        "nascetur ridiculus mus. Mauris hendrerit ex sed condimentum ullamcorper. Interdum et malesuada fames " +
-        "ac ante ipsum primis in faucibus. Aliquam viverra maximus massa, nec fermentum sapien sollicitudin vel. " +
-        "Cras viverra diam eu odio accumsan, vel porttitor mauris rutrum. Aenean pulvinar in risus consectetur " +
-        "auctor.  Mauris lacinia justo pharetra, accumsan quam eget, varius velit. Curabitur vel elementum elit. " +
-        "Duis volutpat.";
-    var readMoreLink = "<a href='javascript:void(0);' onclick='onClickEvent();'>Read More</a>";
-    readContent.substring(0, 200);
-    document.getElementById("read-more-blog-1").innerHtml = readContent + readMorelink;
-})();
+function readMoreLessText(charLimit) {
+    var readMoreLink = charLimit <= 200 ? " ... <a href='javascript:void(0);'onclick='readMoreLessText(400);'>Read More</a>" : " <a href='javascript:void(0);' onclick='readMoreLessText(200);'>Read less</a>";
+    var readLessLink = this.readContent.substring(0, charLimit);
+    document.getElementById("read-more").innerHTML = readLessLink + readMoreLink;
+};
+this.readMoreLessText(200);
+
+this.readContent = "Proin sollicitudin rhoncus feugiat. Aliquam erat volutpat. In facilisis quis velit in finibus. Nullam metus nisi, fringilla at tempus vitae, faucibus porttitor libero. Quisque blandit augue sed diam viverra sollicitudin. Vivamus mollis ligula ipsum, at fermentum erat venenatis quis. Quisque dolor lectus, euismod a bibendum non, finibus in nulla. Donec in augue ac felis ultrices ullamcorper nullam.";
+function readMoreLessText(charLimit) {
+  var readMoreLink = charLimit <= 200 ? " ... <a href='javascript:void(0);'onclick='readMoreLessText(400);'>Read More</a>" : " <a href='javascript:void(0);' onclick='readMoreLessText(200);'>Read less</a>";
+  var nLReadContent = this.readContent.substring(0, charLimit);
+  document.getElementById("read-more2").innerHTML = nLReadContent + readMoreLink;
+};
+this.readMoreLessText(200);
