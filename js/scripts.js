@@ -1,10 +1,10 @@
-var data = '{ "0" : "0 fasdf d gda ad gda ggd gaga gagakd jad jaajkgkla jga kjkajgk jk ga gkla jkgakgjafkgafga kgja gajkgkagl ajgjglaj gkjagkjakjgaffasdfd gda ad gda ggd gaga gagakd jad jaajkgkla jga kjkajgk jk ga gkla jkgakgjafkgafga kgja gajkgkagl ajgjglaj gkjagkjakjgaffasdfd gda ad gda ggd gaga gagakd jad jaajkgkla jga kjkajgk jk ga gkla jkgakgjafkgafga kgja gajkgkagl ajgjglaj gkjagkjakjgaffasdfd gda ad gda ggd gaga gagakd jad jaajkgkla jga kjkajgk jk ga gkla jkgakgjafkgafga kgja gajkgkagl ajgjglaj gkjagkjakjgaffasdfd gda ad gda ggd gaga gagakd jad jaajkgkla jga kjkajgk jk ga gkla jkgakgjafkgafga kgja gajkgkagl ajgjglaj gkjagkjakjgaf", "1" : "1 fasdf d gda ad gda ggd gaga gagakd jad jaajkgkla jga kjkajgk jk ga gkla jkgakgjafkgafga kgja gajkgkagl ajgjglaj gkjagkjakjgaffasdfd gda ad gda ggd gaga gagakd jad jaajkgkla jga kjkajgk jk ga gkla jkgakgjafkgafga kgja gajkgkagl ajgjglaj gkjagkjakjgaffasdfd gda ad gda ggd gaga gagakd jad jaajkgkla jga kjkajgk jk ga gkla jkgakgjafkgafga kgja gajkgkagl ajgjglaj gkjagkjakjgaffasdfd gda ad gda ggd gaga gagakd jad jaajkgkla jga kjkajgk jk ga gkla jkgakgjafkgafga kgja gajkgkagl ajgjglaj gkjagkjakjgaffasdfd gda ad gda ggd gaga gagakd jad jaajkgkla jga kjkajgk jk ga gkla jkgakgjafkgafga kgja gajkgkagl ajgjglaj gkjagkjakjgaf" }';
+var data = '{ "slideshowText" : "slide fasdf d gda ad gda ggd gaga gagakd jad jaajkgkla jga kjkajgk jk ga gkla jkgakgjafkgafga kgja gajkgkagl ajgjglaj gkjagkjakjgaffasdfd gda ad gda ggd gaga gagakd jad jaajkgkla jga kjkajgk jk ga gkla jkgakgjafkgafga kgja gajkgkagl ajgjglaj gkjagkjakjgaffasdfd gda ad gda ggd gaga gagakd jad jaajkgkla jga kjkajgk jk ga gkla jkgakgjafkgafga kgja gajkgkagl ajgjglaj gkjagkjakjgaffasdfd gda ad gda ggd gaga gagakd jad jaajkgkla jga kjkajgk jk ga gkla jkgakgjafkgafga kgja gajkgkagl ajgjglaj gkjagkjakjgaffasdfd gda ad gda ggd gaga gagakd jad jaajkgkla jga kjkajgk jk ga gkla jkgakgjafkgafga kgja gajkgkagl ajgjglaj gkjagkjakjgaf", "newsletterText" : "newsletter fasdf d gda ad gda ggd gaga gagakd jad jaajkgkla jga kjkajgk jk ga gkla jkgakgjafkgafga kgja gajkgkagl ajgjglaj gkjagkjakjgaffasdfd gda ad gda ggd gaga gagakd jad jaajkgkla jga kjkajgk jk ga gkla jkgakgjafkgafga kgja gajkgkagl ajgjglaj gkjagkjakjgaffasdfd gda ad gda ggd gaga gagakd jad jaajkgkla jga kjkajgk jk ga gkla jkgakgjafkgafga kgja gajkgkagl ajgjglaj gkjagkjakjgaffasdfd gda ad gda ggd gaga gagakd jad jaajkgkla jga kjkajgk jk ga gkla jkgakgjafkgafga kgja gajkgkagl ajgjglaj gkjagkjakjgaffasdfd gda ad gda ggd gaga gagakd jad jaajkgkla jga kjkajgk jk ga gkla jkgakgjafkgafga kgja gajkgkagl ajgjglaj gkjagkjakjgaf" }';
 
 var status = "less";
-function toggleText(textAreaId, buttonId, textIndex) {
+function toggleText(textAreaId, buttonId) {
 
     var json = JSON.parse(data);
-    var text = json[textIndex];
+    var text = json[textAreaId];
     var getElement = document.getElementById(textAreaId);
     var getBtn = document.getElementById(buttonId);
 
@@ -19,8 +19,11 @@ function toggleText(textAreaId, buttonId, textIndex) {
     }
 }
 
-// (function () {
-//     var getElement = document.getElementById("textArea");
-//     getElement.innerText = this.blog1Text;
-//     return false;
-//  })();
+(function initText() {
+    var json = JSON.parse(data);
+    var text = json["slideshowText"];
+    document.getElementById("slideshowText").innerHTML = text.substring(0, 200) + "...";
+
+    text = json["newsletterText"];
+    document.getElementById("newsletterText").innerHTML = text.substring(0, 200) + "...";
+})();
