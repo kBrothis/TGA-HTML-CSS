@@ -1,36 +1,35 @@
+function Book(title, author, numberOfPages, publishDate) {
+    this.title = title;
+    this.author = author;
+    this.numberOfPages = numberOfPages;
+    this.publishDate = publishDate;
 
-
-class book {
-    constructor(title, author, publishDate, numberOfPages, pageNumber) {
-        this.title = title;
-        this.author = author;
-        this.publishDate = publishDate;
-        this.numberOfPages = numberOfPages;
-        this.pageNumber = pageNumber;
-    }
-
-    addBook(book) {
-
-        for (var i = 0; i < book.length; i++) {
-            if (book[i].title == book.title) {
-                return false;
-            }
+    this.storeBook() = function () {
+        if (typeof (Storage) !== "underfined") {
+            //store data for one session
+            sessionStorage .setItem()
+        } else {
+            return false;
         }
-        this.title = title;
-        this.publishDate = book.publishDate;
-        this.numberOfPages = book.numberOfPages;
-        this.pageNumber = book.pageNumber;
     }
 
+    this.retrieveBook() = function () {
+        if (typeof (Storage) !== "underfined") {
+            //store data for one session
+            document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+        } else {
+            return false;
+        }
+    }
 
-
-
+    this.addBook() = function (book) {
+        this.title = book.title;
+        this.author = book.author;
+        this.numberOfPages = book.numberOfPages;
+        this.publishDate = book.publishDate;
+    }
 }
 
-var book3 = { "tittle": "book33", "author": "author33", "publishDate": "33/33/3333", "pageNumber": "0" };
-var book1 = new book("book1", "author1", "11/11/1111", 100, 0);
-var book2 = new book("book2", "author2", "22/22/2222", 200, 0);
-addBook(book3);
-
-console.log(book1, book2);
-
+var book1 = new Book("book11", "author1", 1, 1);
+var book2 = new Object({title: "fadsf", author:"fa",numberOfPages: 3, publishDate:3});
+console.log(book1);
