@@ -18,20 +18,50 @@
 <body>
     <form onsubmit="return false;">
         <h2>Enter a book into library</h2>
-        <div class="form-group">
-            <label>Title:</label>
-            <input type="text" name="title" id="title"/>
-            <label>Author:</label>
-            <input type="text" name="Author" id="author"/>
-            <label>Number Of Pages:</label>
-            <input type="text" name="pages" id="pages"/>
-            <label>Publish Date:</label>
-            <input type="text" name="publishDate" id="date"/>
-            <button class="btn btn-default" onclick='gLib.onClickFormSubmit()'>Add book</button>
-        </div>
+        <input type="text" name="title" id="titleToAdd" placeholder="title" />
+        <input type="text" name="Author" id="authorToAdd" placeholder="author" />
+        <input type="text" name="pages" id="pagesToAdd" placeholder="number of pages" />
+        <input type="text" name="publishDate" id="dateToAdd" placeholder="date of publish" />
+        <button class="btn btn-default" onclick="gLib.onClickFormSubmit()">Add book</button>
     </form>
 
+    <form onsubmit="return false;">
+        <h2>Remove a Book:</h2>
+        <input type="text" name="Title" id="titleToRemove" placeholder="title" />
+        <button class="btn btn-default" onclick="gLib.removeBookByTitle(document.getElementById('titleToRemove').value)">Remove By Title</button>
+        <input type="text" name="Author" id="authorToRemove" placeholder="author" />
+        <button class="btn btn-default" onclick="gLib.removeBookByAuthor(document.getElementById('authorToRemove').value)">Remove By Author</button>
+    </form>
 
+    <form onsubmit="return false;">
+        <h2>Get a Book:</h2>
+        <button class="btn btn-default" onclick="gLib.getRandomBook()">Get a random book</button>
+        <input type="text" name="Title" id="getTitle" placeholder="Title" />
+        <button class="btn btn-default" onclick="gLib.getBookByTitle(document.getElementById('getTitle').value)">Get a book by title</button>
+        <input type="text" name="Title" id="getBooks" placeholder="author" />
+        <button class="btn btn-default" onclick="gLib.getBooksByAuthor(document.getElementById('getBooks').value)">Get a books by Author</button>
+        <button class="btn btn-default" onclick="gLib.addBooks()">Add Books</button>
+        <input type="text" name="Title" id="getAuthors" placeholder="author, author,.." />
+        <button class="btn btn-default" onclick="gLib.getAuthors(document.getElementById('getAuthors').value)">Get Authors</button>
+        <button class="btn btn-default" onclick="gLib.getRandomAuthorName()">Get a random author</button>
+    </form>
+
+    <form onsubmit="return false;">
+        <h2>Add Books:</h2>
+        <table id="addBooksTable">
+            <tr>
+                <td><input type="text" placeholder="title"/></td>
+                <td><input type="text" placeholder="author" /></td>
+                <td><input type="text" placeholder="pages" /></td>
+                <td><input type="text" placeholder="date of publish" /></td>
+            </tr>
+        </table>
+        <button class="btn btn-default" onclick="gLib.addMore()">Add More</button>
+        <button class="btn btn-default" onclick="gLib.addBooksInTable()">Add Books</button>
+    </form>
+
+    <label id="displayLibArea"></label>
+    <label id="displayBooks"></label>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
