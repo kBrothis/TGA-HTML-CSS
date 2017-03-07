@@ -14,34 +14,37 @@ var library = function () {
 library.prototype.myBookArray = new Array();
 
 library.prototype.addBook = function (book) {
+    for (var i = 0; i < this.myBookArray.length; i++) {
+        if (this.myBookArray[i].title == book.title) {
+            return false;
+        }
+    }
     this.myBookArray.push(book);
-    return this.myBookArray; //shift/push
+    return true;
 };
+
 library.prototype.removeBookByTitle = function (title) {
     for (var i = 0; i < this.myBookArray.length; i++) {
-        //console.log(this.myBookArray[i].title);
         if (this.myBookArray[i].title == title) {
             this.myBookArray.splice(i, 1);
             return true;
-        } else if (this.myBookArray[i].title !== title) {
-            return false;
         }
-    }; //a loop
+    };
+    return false; //a loop
 };
 library.prototype.removeBookByAuthor = function (author) {
     for (var i = 0; i < this.myBookArray.length; i++) {
-        //console.log(this.myBookArray[i].title);
         if (this.myBookArray[i].author == author) {
-            return this.myBookArray.splice(i, 1);
-        } else if (this.myBookArray[i].title !== author) {
-            return "Author Not Found";
+            this.myBookArray.splice(i, 1);
+            return true;
         }
     };
+    return false;
     //loop
 };
 library.prototype.getRandomBook = function () {
     var randomBook = Math.floor(Math.random() * this.myBookArray.length);
-    return this.myBookArray[randomBook]; //MathRandom
+    return this.myBookArray.length <= 0 ? null : this.myBookArray[randomBook]; //MathRandom
 };
 library.prototype.getBookByTitle = function (title) {
     var regex = new RegExp(title, 'gi');
