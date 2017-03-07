@@ -11,6 +11,7 @@
     <!-- Bootstrap -->
     <link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/books_style.css" rel="stylesheet">
 
     <script src="../bootstrap-3.3.7-dist/js/w3data.js"></script>
 </head>
@@ -21,7 +22,7 @@
         <input type="text" name="title" id="titleToAdd" placeholder="title" />
         <input type="text" name="Author" id="authorToAdd" placeholder="author" />
         <input type="text" name="pages" id="pagesToAdd" placeholder="number of pages" />
-        <input type="text" name="publishDate" id="dateToAdd" placeholder="date of publish" />
+        <input type="text" name="publishDate" id="dateToAdd" placeholder="MM/DD/YYYY" />
         <button class="btn btn-default" onclick="gLib.onClickFormSubmit()">Add book</button>
     </form>
 
@@ -53,7 +54,7 @@
                 <td><input type="text" placeholder="title"/></td>
                 <td><input type="text" placeholder="author" /></td>
                 <td><input type="text" placeholder="pages" /></td>
-                <td><input type="text" placeholder="date of publish" /></td>
+                <td><input type="text" placeholder="MM/DD/YYYY" /></td>
             </tr>
         </table>
         <button class="btn btn-default" onclick="gLib.addMore()">Add More</button>
@@ -61,7 +62,8 @@
     </form>
 
     <label id="displayLibArea"></label>
-    <label id="displayBooks"></label>
+    <label id="displayBooksArea"></label>
+    <label id="displayTextArea"></label>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
