@@ -142,17 +142,14 @@ Lib.prototype.addBooksInTable = function(){
     this.addBooks(booksArray);
 }
 
-Lib.prototype.getAuthors = function (authors) {
-    var authors = authors.split(", ");
-    console.log(authors);
+Lib.prototype.getAuthors = function () {
     var array = new Array();
-    for (var i = 0; i < authors.length; i++){
-       if( this.getBookIndex("author", authors[i]>=0)){
-           this.addBooksToArray(array, "author", authors[i]);
-       }
+    for (var i = 0; i < this.myBookArray.length; i++){
+        if (array.indexOf(this.myBookArray[i].author) < 0) {
+            array.push(this.myBookArray[i].author);
+        }
     }
-    console.log(array);
-    this.displayBooks(array);
+    return document.getElementById("displayTextArea").innerHTML = array;
 };
 
 Lib.prototype.getRandomAuthorName = function () {
@@ -216,9 +213,6 @@ Lib.prototype.displayBooks = function (booksArray) {
     return document.getElementById("displayBooksArea").innerHTML = html;
 }
 
-Lib.prototype.displayText = function (text) {
-    return document.getElementById("displayTextArea").innerHTML = html;
-}
 
 Lib.prototype.storeBook = function () {
     //checked brower for storage
