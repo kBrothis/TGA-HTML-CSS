@@ -1,11 +1,11 @@
-function newBook(title, author, numberOfPages, x) {
+function newBook(title, author, numberOfPages, Published) {
     //properties
     this.title = title;
     this.author = author;
     this.numberOfPages = numberOfPages;
     //events
     //methods
-    this.fetcha = new Date(x).toDateString().substr(4);
+    this.Published = Published;
 }
 
 var library = function () {
@@ -87,7 +87,7 @@ library.prototype.getAuthors = function () {
 };
 library.prototype.getRandomAuthorName = function () {
     var randomAuthor = Math.floor(Math.random() * this.myBookArray.length);
-    return this.myBookArray[randomAuthor].author; //MathRandom
+    return this.myBookArray.length <= 0 ? null : this.myBookArray[randomAuthor].author; //MathRandom
 };
 
 var glibrary = new library();
