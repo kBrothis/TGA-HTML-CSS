@@ -26,11 +26,11 @@ Lib.prototype.addBook = function (book) {
     if (this.getBookIndex("title", newBook.title) <= 0) {
         this.myBookArray.push(newBook);
         this.displayBooksInLib();
-        document.getElementById("displayTextArea").innerHTML = "Book added";
+        document.getElementById("displayBooksArea").innerHTML = "Book added";
         this.storeBook();
         return true;
     } else {
-        document.getElementById("displayTextArea").innerHTML = "Book is already in Library";
+        document.getElementById("displayBooksArea").innerHTML = "Book is already in Library";
         return false;
     }
     
@@ -40,13 +40,13 @@ Lib.prototype.addBook = function (book) {
 Lib.prototype.removeBookByTitle = function (title) {
     var temp = this.getBookIndex("title", title);
     if (temp >= 0) {
-        document.getElementById("displayTextArea").innerHTML = "Book removed";
+        document.getElementById("displayBooksArea").innerHTML = "Book removed";
         this.myBookArray.splice(temp, 1);
         this.displayBooksInLib();
         this.storeBook();
         return true;
     } else {
-        document.getElementById("displayTextArea").innerHTML = "Title not found";
+        document.getElementById("displayBooksArea").innerHTML = "Title not found";
         return false;
     }
 };
@@ -63,10 +63,10 @@ Lib.prototype.removeBookByAuthor = function (author) {
             }
         }
         this.storeBook();
-        document.getElementById("displayTextArea").innerHTML = i+" Book(s) removed";
+        document.getElementById("displayBooksArea").innerHTML = i+" Book(s) removed";
         return true;
     } else {
-        document.getElementById("displayTextArea").innerHTML = "Author not found";
+        document.getElementById("displayBooksArea").innerHTML = "Author not found";
         return false;
     }
 
@@ -79,28 +79,23 @@ Lib.prototype.getRandomBook = function () {
 };
 
 Lib.prototype.getBookByTitle = function (title) {
-    var temp = this.getBookIndex("title", title);
-    
-    if (temp >= 0) {
-        var booksArray = [this.myBookArray[temp]];
-        this.displayBooks(booksArray);
-        return true;
-    } else {
-        document.getElementById("displayTextArea").innerHTML = "Title not found";
-        return false;
+    var array = new Array();
+    for (var i = 0; i < this.myBookArray.length; i++){
+        if (this.myBookArray[i].title.indexOf(title)>=0) {
+            array.push(this.myBookArray[i]);
+        }
     }
+    this.displayBooks(array);
 };
 
 Lib.prototype.getBooksByAuthor = function (author) {
-    var temp = this.getBookIndex("author", author);
-    if (temp >= 0) {
-        var array = new Array();
-        this.displayBooks(this.addBooksToArray(array, "author", author));
-        return true;
-    } else {
-        document.getElementById("displayTextArea").innerHTML = "Author not found";
-        return false;
+    var array = new Array();
+    for (var i = 0; i < this.myBookArray.length; i++) {
+        if (this.myBookArray[i].author.indexOf(author) >= 0) {
+            array.push(this.myBookArray[i]);
+        }
     }
+    this.displayBooks(array);
 };
 
 Lib.prototype.addMore = function () {
@@ -124,7 +119,7 @@ Lib.prototype.addBooks = function (books) {
             num--;
         }
     }
-    document.getElementById("displayTextArea").innerHTML = num+" Books Added";
+    document.getElementById("displayBooksArea").innerHTML = num+" Books Added";
 };
 
 Lib.prototype.addBooksInTable = function(){
@@ -149,7 +144,7 @@ Lib.prototype.getAuthors = function () {
             array.push(this.myBookArray[i].author);
         }
     }
-    return document.getElementById("displayTextArea").innerHTML = array;
+    return document.getElementById("displayBooksArea").innerHTML = array;
 };
 
 Lib.prototype.getRandomAuthorName = function () {
@@ -175,7 +170,7 @@ Lib.prototype.getBookIndex = function (key, value) {
     return -1;
 }
 
-//delete books
+
 Lib.prototype.addBooksToArray = function (array, key, value) {
     for (var i = 0; i < this.myBookArray.length; i++) {
         if (this.myBookArray[i][key] === value) {
@@ -200,17 +195,21 @@ Lib.prototype.displayBooksInLib = function () {
 }
 
 Lib.prototype.displayBooks = function (booksArray) {
-    var html = "<table border='1|1'>";
-    for (var i = 0; i < booksArray.length; i++) {
-        html += "<tr> ";
-        html += "<td> " + booksArray[i].title + " </td>";
-        html += "<td> " + booksArray[i].author + " </td>";
-        html += "<td> " + booksArray[i].pages + " </td>";
-        html += "<td> " + booksArray[i].date + "  </td>";
-        html += "</tr>";
+    if (booksArray.length == 0) {
+        return document.getElementById("displayBooksArea").innerHTML ="Book not found";
+    } else {
+        var html = "<table border='1|1'>";
+        for (var i = 0; i < booksArray.length; i++) {
+            html += "<tr> ";
+            html += "<td> " + booksArray[i].title + " </td>";
+            html += "<td> " + booksArray[i].author + " </td>";
+            html += "<td> " + booksArray[i].pages + " </td>";
+            html += "<td> " + booksArray[i].date + "  </td>";
+            html += "</tr>";
+        }
+        html += "</table>"
+        return document.getElementById("displayBooksArea").innerHTML = html;
     }
-    html += "</table>"
-    return document.getElementById("displayBooksArea").innerHTML = html;
 }
 
 
@@ -225,11 +224,8 @@ Lib.prototype.storeBook = function () {
 
 Lib.prototype.retrieveBook = function () {
     if (typeof (Storage) !== "underfined") {
-        return 
+        return localStorage.getItem("libArray");
     } else {
         return false;
     }
 }
-
-
-//Lib.prototype.addBook({ title: "book33", author: "author33", pages: 3, date: "33/33/3333" })
