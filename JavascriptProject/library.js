@@ -49,22 +49,23 @@ library.prototype.getRandomBook = function () {
 library.prototype.getBookByTitle = function (title) {
     var regex = new RegExp(title, 'gi');
     var arr1 = new Array();
-    if (this.myBookArray[i].title !== title)
-        for (var i = 0; i < this.myBookArray.length; i++)
-            if (this.myBookArray[i].title.match(regex))
-                arr1.push(this.myBookArray[i]);
-    return arr1;
+    for (var i = 0; i < this.myBookArray.length; i++) {
+        if (this.myBookArray[i].title.match(regex))
+            arr1.push(this.myBookArray[i]);
+        return arr1;
+    }
+    return [];
 };
 library.prototype.getBooksByAuthor = function (author) {
     var regex = new RegExp(author, 'gi');
     var arr1 = new Array();
-    if (this.myBookArray[i].author !== author)
-        for (var i = 0; i < this.myBookArray.length; i++) {
-            if (this.myBookArray[i].author.match(regex)) {
-                arr1.push(this.myBookArray[i]);
-            }
+    for (var i = 0; i < this.myBookArray.length; i++) {
+        if (this.myBookArray[i].author.match(regex)) {
+            arr1.push(this.myBookArray[i]);
+            return arr1;
         }
-    return arr1; //
+    }
+    return []; //
 };
 library.prototype.addBooks = function (arr) {
     for (var i = 0; i < arr.length; i++) {
@@ -81,7 +82,7 @@ library.prototype.getAuthors = function () {
     for (var i = 0; i < this.myBookArray.length; i++) {
         if (authors.indexOf(this.myBookArray[i].author) < 0) {
             authors.push(this.myBookArray[i].author);
-        } //prob indexOf or regex
+        }
     };
     return authors;
 };
@@ -96,5 +97,6 @@ var book1 = new newBook("The Giver", "Erik R.", 345, "03/03/2001");
 var book2 = new newBook("Harry Potter", "J.K R.", 234, "03/04/2001");
 var book3 = new newBook("Crime", "Jack Smith", 363, "03/05/2001");
 var book4 = new newBook("Mystery", "John Doe", 868, "03/06/2001");
+var book5 = new newBook("Time", "Jack Smith", 363, "03/05/2001");
 
 //date
