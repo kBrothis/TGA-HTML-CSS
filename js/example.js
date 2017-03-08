@@ -6,6 +6,7 @@ function textResize(sectionId, linkId){
 var articleText = document.getElementById(linkId + "Content");
 var articleLen = length.articleText;
 // set max length variables for each section
+// need to store text locallay to be able to put all back
 if (articleLen > articleLen / 2 + 1) {
     //  Reduce amount of text
     document.getElementById(sectionId).innerHtml = articleText(articleLen / 2);
