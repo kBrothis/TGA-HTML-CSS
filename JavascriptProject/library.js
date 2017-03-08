@@ -52,9 +52,9 @@ library.prototype.getBookByTitle = function (title) {
     for (var i = 0; i < this.myBookArray.length; i++) {
         if (this.myBookArray[i].title.match(regex))
             arr1.push(this.myBookArray[i]);
-        return arr1;
+
     }
-    return [];
+    return arr1;
 };
 library.prototype.getBooksByAuthor = function (author) {
     var regex = new RegExp(author, 'gi');
@@ -62,10 +62,11 @@ library.prototype.getBooksByAuthor = function (author) {
     for (var i = 0; i < this.myBookArray.length; i++) {
         if (this.myBookArray[i].author.match(regex)) {
             arr1.push(this.myBookArray[i]);
-            return arr1;
+
         }
+
     }
-    return []; //
+    return arr1; //
 };
 library.prototype.addBooks = function (arr) {
     for (var i = 0; i < arr.length; i++) {
@@ -97,6 +98,6 @@ var book1 = new newBook("The Giver", "Erik R.", 345, "03/03/2001");
 var book2 = new newBook("Harry Potter", "J.K R.", 234, "03/04/2001");
 var book3 = new newBook("Crime", "Jack Smith", 363, "03/05/2001");
 var book4 = new newBook("Mystery", "John Doe", 868, "03/06/2001");
-var book5 = new newBook("Time", "Jack Smith", 363, "03/05/2001");
+var book5 = new newBook("The Time", "Jack Smith", 363, "03/05/2001");
 
 //date
