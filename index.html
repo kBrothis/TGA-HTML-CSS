@@ -66,7 +66,7 @@
 <!-- HERO -->
     <section class="container hero section-1 mt-4 mb-0 pb-4">
       <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-12 col-md-8">
           <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item active">
@@ -89,12 +89,13 @@
             </a>
           </div>
         </div>
-        <article class="col-sm-4 pl-4">
-          <h4 class="my-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fermentum elit sed semper porttitor.</h4>
-          <p class="text-muted">
+        <article id="hero-text" class="col-sm-12 col-md-4 pl-4">
+          <h4 class="my-2">Shabby chic dreamcatcher street art mustache pok pok, meggings sunt kickstarter viral wolf vape nulla microdosing iceland.</h4>
+          <!-- <p class="text-muted">
             Praesent dictum tempor purus. Donec sed eros vulputate, fermentum sapien eget, varius libero. Nunc sit amet lobortis enim. Vivamus congue nisl in leo rutrum efficitur. Fusce nisi augue, volutpat vel augue id, pretium tempus ante. Curabitur nec libero enim. Cras lobortis ut augue eget maximus.
-          </p>
-          <span><a href="javascript:void(0);">Read More</a></span>
+          </p> -->
+          <p id="read-more-hero" class="text-muted"></p>
+          <!-- <span><a href="javascript:void(0);" onclick="toggleReadMore()" id="hero">Read More</a></span> -->
         </article>
       </div>
     </section>
@@ -103,7 +104,7 @@
     <section class="container section-2">
       <div class="row">
         <!-- NEWSLETTER -->
-        <div class="col-sm-4 article-wrapper">
+        <div class="col-sm-12 col-md-4 article-wrapper">
           <article class="pl-0 pr-2 my-3">
             <span class="newsletter-heading text-muted font-weight-bold">Newsletter |</span><span class="date text-muted"> January, 2017</span>
             <h4 class="my-2">Newsletter Title</h4>
@@ -116,7 +117,7 @@
         </div>
 
         <!-- BLOG POSTS -->
-        <div class="col-sm-4 article-wrapper p-0">
+        <div class="col-sm-12 col-md-4 article-wrapper p-0">
           <article class="article-top pb-4 my-3 px-4">
             <span class="newsletter-heading text-muted font-weight-bold">From the Blog</span>
             <h4 class="my-2">Blog Post Title</h4>
@@ -143,7 +144,7 @@
         </div>
 
         <!-- SIGN UP -->
-        <div class="col-sm-4 article-wrapper border-right-0 pr-0">
+        <div class="col-sm-12 col-md-4 article-wrapper border-right-0 pr-0">
           <article class="px-2 my-3">
             <span class="newsletter-heading text-muted font-weight-bold">Sign Up</span>
             <p class="text-muted mt-3">
@@ -151,7 +152,7 @@
             </p>
             <form class="form-signin ml-0">
               <label for="inputEmail" class="sr-only">Email address</label>
-              <input type="name" id="inputName" class="form-control m-0" placeholder="Name" required autofocus>
+              <input type="text" id="inputName" class="form-control m-0" placeholder="Name" required autofocus>
               <label for="inputName" class="sr-only">Name</label>
               <input type="email" id="inputEmail" class="form-control" placeholder="Email" required>
               <button class="btn btn-primary mt-3" type="submit">Submit</button>
@@ -172,6 +173,7 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
 
   </body>
 </html>
